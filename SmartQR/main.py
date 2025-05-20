@@ -44,7 +44,7 @@ def index():
             db.session.commit()
 
     return render_template("index.html", qr_image=qr_base64)
-
+    
 @app.route("/history")
 def history():
     all_qrs = QRData.query.order_by(QRData.created_at.desc()).all()
